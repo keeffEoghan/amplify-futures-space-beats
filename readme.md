@@ -30,7 +30,7 @@ Our prototype allows a musician to place melodies in space using GPS, as fans mo
     1. Press `join` to start, allow the requested permissions, and turn up your volume.
     1. The pulsating dot represents your current device location in the space between the four corner-points (`1`, `2`, `3`, `4`).
     1. With your GPS-enabled devices, move to a location, open any corner-point, select a human-made `preset` or an AI-generated `random` musical score, and `save` that score at your current location to the corner-point.
-    1. Repeat step `3` at different locations each time, for `2` or `4` of the corner-points.
+    1. Repeat the previous step at different locations each time, for `2` or `4` of the corner-points.
     1. Move around the space with your devices to hear the AI blend between the human-or-AI-made scores at each corner-point.
     1. Change the `role` and `instrument` to experiment with different sounds, and change `splits` for more or less blending divisions between the corner-points.
     1. Try it out with multiple devices and people at once, to experiment with the AI mediating composition of music between the lead artists composing the main scores and locations, and the wandering audience exploring the space of scores between the corner-points.
