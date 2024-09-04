@@ -1,0 +1,74 @@
+{
+  "name": "amplify-futures-space-beats",
+  "version": "1.0.0",
+  "description": "AI Music Co-Creation: Prototype exploring collaborative co-creation of music mediated by AI with inputs from artist and audience.",
+  "engines": {
+    "node": "22.x || *"
+  },
+  "main": "server/index.mjs",
+  "browser": "client/index.js",
+  "scripts": {
+    "start": "npm run client:dist:fresh && npm run server:dist",
+    "dev": "npm run client:watch & npm run server:dev & wait",
+    "dev:fresh": "npm run client:watch:fresh & npm run server:dev & wait",
+    "server:dist": "npm run server:dist:start",
+    "server:dist:start": "node ./server/index.mjs $npm_package_config_server",
+    "server:dev": "npm run server:dev:list && npm run server:dev:start && npm run server:dev:logs",
+    "server:dev:start": "forever start -wt --watchDirectory ./server/ $npm_package_config_server",
+    "server:dev:stop": "forever stop -t $npm_package_config_server",
+    "server:dev:list": "forever list",
+    "server:dev:logs": "forever logs -f 0",
+    "client:watch": "parcel --target client -p $npm_package_config_parcel_port",
+    "client:watch:fresh": "npm run client:watch -- --no-cache",
+    "client:build": "parcel build --target client",
+    "client:build:fresh": "npm run client:build -- --no-cache",
+    "client:dist": "npm run clean:dist && npm run client:build",
+    "client:dist:fresh": "npm run clean:dist && npm run client:build:fresh",
+    "clean": "npm run clean:dist & npm run clean:node & npm run clean:git & wait",
+    "clean:dist": "npm run clean:build & npm run clean:parcel & wait",
+    "clean:build": "rm -rf ./dist/",
+    "clean:parcel": "rm -rf ./.parcel-cache",
+    "clean:node": "rm -rf ./node_modules",
+    "clean:git": "git prune && git gc"
+  },
+  "config": {
+    "server": "./server/index.mjs",
+    "server_name": "ai-music-co-creation-server",
+    "parcel_port": "1234",
+    "socket_port": "8080"
+  },
+  "dependencies": {
+    "@magenta/music": "^1.23.1",
+    "@tensorflow/tfjs": "^2.7.0",
+    "@tensorflow/tfjs-node": "^2.7.0",
+    "@thi.ng/math": "^5.4.11",
+    "@thi.ng/vectors": "^7.6.14",
+    "express": "^4.18.2",
+    "fast-deep-equal": "^3.1.3",
+    "socket-ntp": "^0.1.0",
+    "socket.io": "^4.6.2",
+    "socket.io-client": "^4.6.2",
+    "tone": "^14.7.58"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "forever": "^4.0.3",
+    "parcel": "^2.9.1",
+    "postcss": "^8.4.24",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^11.2.2",
+    "postcss-url": "^10.1.3",
+    "process": "^0.11.10"
+  },
+  "targets": {
+    "client": {
+      "isLibrary": false,
+      "engines": {
+        "browsers": "last 2 versions, > 0.5%, not dead"
+      },
+      "source": "client/index.html",
+      "publicUrl": "./",
+      "context": "browser"
+    }
+  }
+}

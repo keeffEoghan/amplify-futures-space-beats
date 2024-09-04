@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Music Co-Creation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+  </head>
+  <body>
+    <header>
+      <h1>ai music co-creation</h1>
+    </header>
+    <main>
+      <button class="join">join</button>
+      <section class="arena hide">
+        <section class="edges">
+          <article class="tip blank">
+            <button class="edit">1</button>
+            <figure class="visual">
+              <svg class="score"></svg>
+            </figure>
+            <section class="controls">
+              <label>
+                <span>preset</span>
+                <select class="presets"></select>
+              </label>
+              <button class="clear">clear</button>
+              <button class="random">random</button>
+              <button class="save">save</button>
+            </section>
+            <code class="tip-geo"></code>
+          </article>
+          <article class="tip blank">
+            <button class="edit">2</button>
+            <figure class="visual">
+              <svg class="score"></svg>
+            </figure>
+            <section class="controls">
+              <label>
+                <span>preset</span>
+                <select class="presets"></select>
+              </label>
+              <button class="clear">clear</button>
+              <button class="random">random</button>
+              <button class="save">save</button>
+            </section>
+            <code class="tip-geo"></code>
+          </article>
+          <article class="tip blank">
+            <button class="edit">3</button>
+            <figure class="visual">
+              <svg class="score"></svg>
+            </figure>
+            <section class="controls">
+              <label>
+                <span>preset</span>
+                <select class="presets"></select>
+              </label>
+              <button class="clear">clear</button>
+              <button class="random">random</button>
+              <button class="save">save</button>
+            </section>
+            <code class="tip-geo"></code>
+          </article>
+          <article class="tip blank">
+            <button class="edit">4</button>
+            <figure class="visual">
+              <svg class="score"></svg>
+            </figure>
+            <section class="controls">
+              <label>
+                <span>preset</span>
+                <select class="presets"></select>
+              </label>
+              <button class="clear">clear</button>
+              <button class="random">random</button>
+              <button class="save">save</button>
+            </section>
+            <code class="tip-geo"></code>
+          </article>
+          <div class="position">
+            <code class="geo"></code>
+          </div>
+        </section>
+        <figure class="player visual">
+          <svg class="score"></svg>
+        </figure>
+      </section>
+    </main>
+    <footer class="hide">
+      <label>
+        <span>role</span>
+        <select class="roles">
+          <optgroup label="pitched">
+            <option>lead</option>
+            <option>bass</option>
+          </optgroup>
+          <optgroup label="percussion">
+            <option>drums</option>
+          </optgroup>
+          <optgroup label="full">
+            <option selected>trio</option>
+          </optgroup>
+          <optgroup label="none">
+            <option>mute</option>
+          </optgroup>
+        </select>
+      </label>
+      <label>
+        <span>instrument</span>
+        <select class="instruments ignore"></select>
+      </label>
+      <label>
+        <span>splits</span>
+        <input
+          class="splits"
+          type="number"
+          min="2"
+          max="99"
+          required
+          pattern="/d+"
+        />
+      </label>
+    </footer>
+    <small>
+      <code class="socket">disconnected</code>
+      <code class="cell">not playing</code>
+      <code class="seek">not seeking</code>
+      <code class="sync">not syncing</code>
+    </small>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
